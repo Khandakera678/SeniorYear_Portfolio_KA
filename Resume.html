@@ -1,136 +1,343 @@
 <!DOCTYPE html>
-<html>
-<title>My Resume</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://w3schools.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
-<body class="w3-light-grey">
-<!--I am using a template from w3schools-->
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Resume - Khandaker A.</title>
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <!-- The Grid -->
-  <div class="w3-row-padding">
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #eef2f6;
+      color: #4a5568;
+      line-height: 1.6;
+    }
+
+   
+    .page-container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 16px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+
+    .left-column {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .right-column {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
   
-    <!-- Left Column -->
-    <div class="w3-third">
+    .card {
+      background-color: #ffffff;
+      box-shadow: 0 4px 10px rgba(26, 54, 93, 0.12);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .card-padding {
+      padding: 24px;
+    }
+
+  
+    .profile-header {
+      position: relative;
+      width: 100%;
+    }
+
+    .profile-header img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .profile-name {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 24px;
+      background: linear-gradient(transparent, rgba(15, 32, 60, 0.8));
+      color: #ffffff;
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    /* Contact & Section Info */
+    .info-list p {
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .accent-icon {
+      color: #1a365d;
+      margin-right: 12px;
+      width: 18px;
+      text-align: center;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #e2e8f0;
+      margin: 20px 0;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 16px;
+    }
+
+    /* Progress Bars */
+    .skill-name {
+      font-size: 14px;
+      margin-bottom: 6px;
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    .progress-bg {
+      background-color: #dce4ee;
+      border-radius: 16px;
+      height: 20px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      background-color: #1a365d;
+      color: #ffffff;
+      height: 100%;
+      border-radius: 16px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 600;
+    }
+
+    /* Right Column Headings & Items */
+    .main-heading {
+      font-size: 26px;
+      font-weight: 600;
+      color: #1a365d;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+    }
+
+    .main-heading i {
+      color: #1a365d;
+      font-size: 28px;
+      margin-right: 16px;
+    }
+
+    .sub-heading {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 6px;
+    }
+
+    .date-badge {
+      color: #1a365d;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .current-tag {
+      background-color: #1a365d;
+      color: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    ul.clean-list {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+
+    ul.clean-list li {
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a365d;
+      color: #ffffff;
+      text-align: center;
+      padding: 24px 16px;
+      margin-top: 24px;
+    }
+
+    footer .social-icons {
+      margin: 12px 0;
+      font-size: 20px;
+    }
+
+    footer .social-icons i {
+      margin: 0 8px;
+      cursor: pointer;
+    }
+
+    footer .social-icons i:hover {
+      opacity: 0.75;
+    }
+
+    /* Responsive Mobile Layout */
+    @media (max-width: 768px) {
+      .page-container {
+        flex-direction: column;
+      }
+      .left-column, .right-column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container">
     
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="Pfp.jpg" style="width:100%; max-height:300px; object-fit:cover; object-position:center;" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Khandaker A.</h2>
-          </div>
+    <!-- Left Sidebar -->
+    <div class="left-column">
+      <div class="card">
+        <div class="profile-header">
+          <img src="Pfp.jpg" alt="Khandaker A.">
+          <div class="profile-name">Khandaker A.</div>
         </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Web and Game Dev</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>NYC, New York</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>Khandakera5@nycstudents.net</p>
+
+        <div class="card-padding">
+          <div class="info-list">
+            <p><i class="fa fa-briefcase accent-icon"></i>Web and Game Dev</p>
+            <p><i class="fa fa-home accent-icon"></i>NYC, New York</p>
+            <p><i class="fa fa-envelope accent-icon"></i>Khandakera5@nycstudents.net</p>
+          </div>
+
           <hr>
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Digital Art</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+          <div class="section-title"><i class="fa fa-asterisk accent-icon"></i>Skills</div>
+          
+          <div class="skill-name">Digital Art</div>
+          <div class="progress-bg">
+            <div class="progress-fill" style="width: 90%;">90%</div>
           </div>
-          <p>Photography</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
-          </div>
-          <p>Coding Language</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
-          <p>Media</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-          </div>
-          <br>
 
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>English</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+          <div class="skill-name">Photography</div>
+          <div class="progress-bg">
+            <div class="progress-fill" style="width: 80%;">80%</div>
           </div>
-          <p>Bangla</p>
-          <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+
+          <div class="skill-name">Coding Language</div>
+          <div class="progress-bg">
+            <div class="progress-fill" style="width: 75%;">75%</div>
           </div>
-          <br>
+
+          <div class="skill-name">Media</div>
+          <div class="progress-bg">
+            <div class="progress-fill" style="width: 50%;">50%</div>
+          </div>
+
+          <hr>
+
+          <div class="section-title"><i class="fa fa-globe accent-icon"></i>Languages</div>
+
+          <div class="skill-name">English</div>
+          <div class="progress-bg">
+            <div class="progress-fill" style="width: 100%;"></div>
+          </div>
+
+          <div class="skill-name">Bangla</div>
+          <div class="progress-bg">
+            <div class="progress-fill" style="width: 55%;"></div>
+          </div>
         </div>
-      </div><br>
-
-    <!-- End Left Column -->
+      </div>
     </div>
 
-    <!-- Right Column -->
-    <div class="w3-twothird">
-    
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-        <div class="w3-container">
-        <h5 class="w3-opacity"><b>Web and Game Devloper</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Nov 2026 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Hi!, I am Khandaker, a senior at Thomas Edison CTE Highschool currently develping skills in web and game development/prototyping. I am actively building and learning to stregnthen my expertise to be able to create games and wesbites. w</p>
-          <hr>
+    <!-- Right Main Content -->
+    <div class="right-column">
+      
+      <!-- Experience & Accomplishments Card -->
+      <div class="card card-padding">
+        <h2 class="main-heading"><i class="fa fa-suitcase"></i>Work Experience</h2>
+
+        <div>
+          <h3 class="sub-heading">Web and Game Developer</h3>
+          <span class="date-badge"><i class="fa fa-calendar" style="margin-right: 8px;"></i>Nov 2026 - <span class="current-tag">Current</span></span>
+          <p>Hi! I am Khandaker, a senior at Thomas Edison CTE High School currently developing skills in web and game development/prototyping. I am actively building and learning to strengthen my expertise to create games and websites.</p>
         </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Skills</b></h5>
-          
-          <li>I have skills and experinces in coding langauges such as html, css, and python. </li>
-          <li>I am well knoweledged on how to use figma and unity to create apps and games </li>
-          <li>I also have a bit of epertise when it comes to graphic design and digital art.</li>
-          <hr>
+
+        <hr>
+
+        <div>
+          <h3 class="sub-heading">Skills</h3>
+          <ul class="clean-list">
+            <li>I have skills and experience in coding languages such as HTML, CSS, and Python.</li>
+            <li>I am well knowledgeable on how to use Figma and Unity to create apps and games.</li>
+            <li>I also have expertise in graphic design and digital art.</li>
+          </ul>
         </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Accomplishments</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i> 2024 - 2026</h6>
-            <li> Participated in the Congressional App Challenge </li>
-           <li> Completed the Infy App x Pencil challenge alongside my teammates </li>
-          <li> Participated in the G4C competitions for 2 years </li><br>
-           <li> Was a semi-finalist for character design in G4C
-           </li>
+
+        <hr>
+
+        <div>
+          <h3 class="sub-heading">Accomplishments</h3>
+          <span class="date-badge"><i class="fa fa-calendar" style="margin-right: 8px;"></i>2024 - 2026</span>
+          <ul class="clean-list">
+            <li>Participated in the Congressional App Challenge</li>
+            <li>Completed the Infy App x Pencil challenge alongside my teammates</li>
+            <li>Participated in the G4C competitions for 2 years</li>
+            <li>Was a semi-finalist for character design in G4C</li>
+          </ul>
         </div>
       </div>
 
-         <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-        <div class="w3-container">
+      <!-- Education Card -->
+      <div class="card card-padding">
+        <h2 class="main-heading"><i class="fa fa-certificate"></i>Education</h2>
 
+        <div>
+          <h3 class="sub-heading">Thomas Edison CTE High School</h3>
+          <span class="date-badge"><i class="fa fa-calendar" style="margin-right: 8px;"></i>2023 - 2027</span>
+          <p>High School Diploma — Web &amp; Game Development Track</p>
         </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Thomas Edison CTE High School</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2023 - 2027</h6>
-          <hr>
-        </div>
-  
+      </div>
 
-    <!-- End Right Column -->
     </div>
-    
-  <!-- End Grid -->
+
   </div>
   
-  <!-- End Page Container -->
-</div>
-
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+    <footer>
+    <p>Find me on social media.</p>
+    <div class="social-icons">
+      <i class="fa fa-linkedin"></i>
+    </div>
+    <p style="font-size: 14px;">&copy; 2026 Khandaker A.</p>
+  </footer>
 
 </body>
 </html>
+
+       
